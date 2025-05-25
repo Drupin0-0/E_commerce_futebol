@@ -1,10 +1,10 @@
 from django.db import models
+from produtos.models import Produto
 
-# Create your models here.
 class Carrinho(models.Model):
-    produto_adicionado = models.CharField(max_length=30)
-    preco = models.DecimalField(max_digits=8, decimal_places=2)
-    quantidade = models.PositiveIntegerField()
-    descricao = models.TextField()
-    imagem = models.ImageField(upload_to='produtos/', blank=True, null=True)
-    
+    produto_adicionado = models.ForeignKey(Produto, on_delete=models.CASCADE)
+    quantidade = models.IntegerField()
+
+    @property
+    def preco_total(self):
+        return self.produto_adicionado.preco * self.quantidade
