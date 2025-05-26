@@ -1,12 +1,55 @@
 {% load static %}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>{% block title %}Meu Site{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'global/css/estilo.css' %}">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Playfair+Display+SC:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Rock+Salt&display=swap"
+        rel="stylesheet">
+
 </head>
+
 <body>
-    <p>ola</p>
+    <header>
+        <div class="banner_site">
+            <div class="col esquerda">
+                <h1 class="logo_site">Futebol</h1>
+            </div>
+
+            <div class="pesquisa-container">
+                <input type="text" placeholder="O que você procura?" />
+                <img src="{% static 'imagens/lupa.svg' %}" alt="Buscar" class="icone-input">
+            </div>
+            <div class="col direita">
+                <nav class="menu_site">
+                    <a href="#" class="link-conta">
+                        <img src="{% static 'imagens/conta.svg' %}" alt="Ícone Conta" class="icone-conta">
+                        <span>Minha Conta</span>
+                    </a>
+                    <a href="#" class="link-conta">
+                        <img src="{% static 'imagens/carrinho.svg' %}" alt="Ícone Conta" class="icone-conta">
+                        <span>Carrinho</span>
+                    </a>
+                </nav>
+            </div>
+        </div>
+        
+    </header>
+
+    <main>
+        {% block content %}
+        <p>Olá</p>
+        {% endblock %}
+    </main>
+
+    <footer>
+        <p>© 2025 - Todos os direitos reservados</p>
+    </footer>
 </body>
+
 </html>

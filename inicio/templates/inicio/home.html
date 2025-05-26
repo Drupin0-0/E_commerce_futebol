@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <div class="tres-pontos">
+        <ul>
+            <li>
+                FUTEBOL
+                
+            </li>
+            <li>
+                NOVIDADES
+            </li>
+            <li>
+                OUTLET
+            </li>
+            <li>
+                ITENS TERMICOS
+            </li>
+            <li>
+                CLUBES
+            </li>
+        </ul>
+    </div>
+    <section class="produtos">
+
+        <div class="produto-card">
+            <img src="{% static 'imagens/corintias.png' %}" alt="Nome do produto 2">
+            <h3>Nome do Produto 2</h3>
+            <p>R$ 79,90</p>
+            <button>Comprar</button>
+        </div>
+    <!-- Mais produtos -->
+</section>
+
+{% endblock %}
